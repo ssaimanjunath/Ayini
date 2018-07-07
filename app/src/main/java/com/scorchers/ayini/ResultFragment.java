@@ -12,13 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,6 +36,7 @@ public class ResultFragment extends Fragment {
     private RecyclerView result_list;
     private AdapterResult mAdapter_daily;
     View rootView;
+    ImageView imgBtn;
     public ResultFragment() {
         // Required empty public constructor
     }
@@ -53,6 +50,7 @@ public class ResultFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView =  inflater.inflate(R.layout.fragment_result, container, false);
+        imgBtn = rootView.findViewById(R.id.res_bg);
         new AsyncFetch().execute();
         return rootView;
     }
@@ -145,29 +143,27 @@ public class ResultFragment extends Fragment {
 
                 if(jArray.length()==0)
                 {
-                    ImageButton img = rootView.findViewById(R.id.res_bg);
-                    img.setVisibility(View.VISIBLE);
+                        imgBtn.setVisibility(View.VISIBLE);
                 }
                 else
                 {
-                    ImageButton img = rootView.findViewById(R.id.res_bg);
-                    img.setVisibility(View.INVISIBLE);
-                }
-                // Extract data from json and store into ArrayList as class objects
-                for (int i = 0; i < jArray.length(); i++) {
-                    JSONObject json_data = jArray.getJSONObject(i);
-                    DataResult schemeData = new DataResult();
-                    schemeData.crop_name = json_data.getString("crop_name");
-                    schemeData.crop_id = json_data.getString("crop_id");
-                    schemeData.mark = json_data.getString("crop_mark");
-                    data.add(schemeData);
+                    imgBtn.setVisibility(View.INVISIBLE);
+                    for (int i = 0; i < jArray.length(); i++) {
+                        JSONObject json_data = jArray.getJSONObject(i);
+                        DataResult schemeData = new DataResult();
+                        schemeData.crop_name = json_data.getString("crop_name");
+                        schemeData.crop_id = json_data.getString("crop_id");
+                        schemeData.mark = json_data.getString("crop_mark");
+                        data.add(schemeData);
+                    }
+
+                    // Setup and Handover data to recyclerview
+                    result_list = rootView.findViewById(R.id.result_list);
+                    mAdapter_daily = new AdapterResult(rootView.getContext(), data);
+                    result_list.setAdapter(mAdapter_daily);
+                    result_list.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
                 }
 
-                // Setup and Handover data to recyclerview
-                result_list = rootView.findViewById(R.id.result_list);
-                mAdapter_daily = new AdapterResult(rootView.getContext(), data);
-                result_list.setAdapter(mAdapter_daily);
-                result_list.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
 
             } catch (JSONException e) {
                 Toast.makeText(getContext(), e.toString(), Toast.LENGTH_LONG).show();
