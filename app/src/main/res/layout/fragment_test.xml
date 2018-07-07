@@ -1,0 +1,311 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    tools:context="com.scorchers.ayini.TestFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/lin1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginTop="10dp"
+            card_view:cardCornerRadius="2dp"
+            card_view:cardElevation="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white_bg"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:tooltipText="Hello"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="35dp"
+                    android:drawableLeft="@drawable/ic_info_outline_black_24dp"
+                    android:padding="7dp"
+                    android:text="  pH value"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/pH"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/tv1"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pH"
+                    android:textSize="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignEnd="@+id/pH"/>
+
+                <View
+                    android:id="@+id/div1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/pH"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_below="@+id/div1"
+                    android:layout_marginRight="35dp"
+                    android:drawableLeft="@drawable/ic_info_outline_black_24dp"
+                    android:padding="7dp"
+                    android:text="  Nitrogen"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/nitro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_alignParentTop="true"
+                    android:layout_below="@+id/pH"
+                    android:inputType="numberDecimal"
+                    android:layout_marginTop="45dp"
+                    android:layout_toEndOf="@+id/tv2"
+                    android:paddingLeft="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kg/ha"
+                    android:textSize="20dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_alignEnd="@+id/nitro"/>
+
+                <View
+                    android:id="@+id/div2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/nitro"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/div2"
+                    android:layout_marginRight="28dp"
+                    android:drawableLeft="@drawable/ic_info_outline_black_24dp"
+                    android:padding="7dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="  Potasium"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/potash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_below="@+id/nitro"
+                    android:inputType="numberDecimal"
+                    android:layout_marginTop="90dp"
+                    android:layout_toEndOf="@+id/tv3"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kg/ha"
+                    android:textSize="20dp"
+                    android:layout_marginTop="95dp"
+                    android:layout_alignEnd="@+id/potash"/>
+
+                <View
+                    android:id="@+id/div3"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/potash"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/div3"
+                    android:layout_marginRight="5dp"
+                    android:drawableLeft="@drawable/ic_info_outline_black_24dp"
+                    android:padding="7dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="  Phosphorus"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/phosp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/calc"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_below="@+id/potash"
+                    android:paddingLeft="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kg/ha"
+                    android:textSize="20dp"
+                    android:layout_marginTop="140dp"
+                    android:layout_alignEnd="@+id/phosp"/>
+
+                <View
+                    android:id="@+id/div4"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/phosp"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/tv5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/div4"
+                    android:layout_marginRight="40dp"
+                    android:drawableLeft="@drawable/ic_info_outline_black_24dp"
+                    android:padding="7dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="  Calcium"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/calc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_below="@+id/potash"
+                    android:layout_marginTop="180dp"
+                    android:layout_toEndOf="@+id/tv5"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:paddingLeft="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kg/ha"
+                    android:textSize="20dp"
+                    android:layout_marginTop="185dp"
+                    android:layout_alignEnd="@+id/calc"/>
+
+                <View
+                    android:id="@+id/div5"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/calc"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/tv6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/div5"
+                    android:layout_marginRight="8dp"
+                    android:drawableLeft="@drawable/ic_info_outline_black_24dp"
+                    android:padding="7dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="  Magnesium"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/mg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/calc"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:inputType="numberDecimal"
+                    android:layout_below="@+id/tv5"
+                    android:paddingLeft="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kg/ha"
+                    android:textSize="20dp"
+                    android:layout_marginTop="230dp"
+                    android:layout_alignEnd="@+id/mg"/>
+
+                <View
+                    android:id="@+id/div6"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/mg"
+                    android:background="?android:attr/listDivider" />
+
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lin1"
+            android:id="@+id/lin2">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:id="@+id/pred"
+                android:background="@drawable/button_background"
+                android:text="PREDICT CROPS"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:id="@+id/clear"
+            android:background="@drawable/button_background"
+            android:text="CLEAR ALL"
+            android:layout_below="@+id/lin2"
+            android:layout_marginTop="15dp"
+            android:textColor="@android:color/white" />
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_pred"
+            style="@style/SpinKitView.Large.Wave"
+            android:layout_width="55dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:padding="10dp"
+            android:layout_height="55dp"
+            app:SpinKit_Color="@color/colorPrimaryDark"
+            android:layout_gravity="center"
+            android:layout_below = "@+id/clear"
+             />
+
+    </RelativeLayout>
+
+</ScrollView>
