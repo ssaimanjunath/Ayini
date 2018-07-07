@@ -147,7 +147,6 @@ public class ResultFragment extends Fragment {
                 }
                 else
                 {
-                    imgBtn.setVisibility(View.INVISIBLE);
                     for (int i = 0; i < jArray.length(); i++) {
                         JSONObject json_data = jArray.getJSONObject(i);
                         DataResult schemeData = new DataResult();
